@@ -13,8 +13,18 @@ const Header = () => {
                 <ul className="menu menu-horizontal p-0">
                     <Link className='px-4' to='/Home'><h6>Home</h6></Link>
                     <Link className='px-4' to='/Services'><h6>Services</h6></Link>
-                    <Link className='px-4' to='/Home'><h6>Blog</h6></Link>
+                    <Link className='px-4' to='/Blog'><h6>Blog</h6></Link>
+
+
                 </ul>
+                <div className="dropdown">
+                    <Link tabIndex={0} className="btn m-1">Sign In / Up</Link>
+                    {/* <label tabIndex={0} className="btn m-1">Sign In / Up</label> */}
+                    <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                        <Link className='options ' variant="primary" to='/SignIn'><h6> Sign In</h6></Link>
+                        <Link className='options ' variant="primary" to='/SignUp'><h6> Sign Up</h6></Link>
+                    </ul>
+                </div>
             </div>
         </div>
     );

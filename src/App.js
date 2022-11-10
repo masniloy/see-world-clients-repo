@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Main from './Layout/Main';
+import Blog from './Pages/Blog/Blog';
 import Home from './Pages/Home/Home';
 import Services from './Pages/Services/Services';
 
@@ -21,10 +22,13 @@ function App() {
         {
           path: '/Services', element: <Services></Services>
         },
-
-
+        {
+          path: '/Blog', element: <Blog></Blog>
+        }
       ]
+
     },
+
   ])
 
   return (
