@@ -21,8 +21,8 @@ const Header = () => {
                     <Link tabIndex={0} className="btn m-1">Sign In / Up</Link>
                     {/* <label tabIndex={0} className="btn m-1">Sign In / Up</label> */}
                     <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                        <Link className='options ' variant="primary" to='/SignIn'><h6> Sign In</h6></Link>
-                        <Link className='options ' variant="primary" to='/SignUp'><h6> Sign Up</h6></Link>
+                        <Link className='options text-sky-500' variant="primary" to='/Signin'><h6> Sign In</h6></Link>
+                        <Link className='options text-sky-500' variant="primary" to='/Signup'><h6> Sign Up</h6></Link>
                     </ul>
                 </div>
             </div>

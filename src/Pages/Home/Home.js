@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Services from '../Services/Services';
 
 const Home = () => {
     return (
@@ -15,8 +16,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-
         </div>
+
     );
 };
 

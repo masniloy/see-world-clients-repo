@@ -4,6 +4,9 @@ import Main from './Layout/Main';
 import Blog from './Pages/Blog/Blog';
 import Home from './Pages/Home/Home';
 import Services from './Pages/Services/Services';
+import Signin from './Pages/Shared/Header/Signin/Signin';
+import Signup from './Pages/Shared/Header/Signup/Signup';
+
 
 function App() {
 
@@ -20,11 +23,23 @@ function App() {
           path: '/Home', element: <Home></Home>
         },
         {
-          path: '/Services', element: <Services></Services>
+          path: '/Services',
+          loader: async () => {
+            return fetch('https://b6a11-service-review-server-side-masniloy.vercel.app/Services')
+          },
+          element: <Services></Services>
         },
         {
           path: '/Blog', element: <Blog></Blog>
+        },
+        {
+          path: '/Signin', element: <Signin></Signin>
+        },
+        {
+          path: '/Signup', element: <Signup></Signup>
         }
+
+
       ]
 
     },
