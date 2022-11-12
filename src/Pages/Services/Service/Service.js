@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
-    const { _id, name, image, price, description, rating } = service;
+    const { _id, name, image, price, description, rating, Serial } = service;
     console.log(_id);
 
     return (
@@ -14,11 +15,12 @@ const Service = ({ service }) => {
                     <p><b>PRICE: {price}</b></p>
                     <p><b>{rating}<input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" /></b></p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
+                        <Link to={`${Serial}`}><button className="btn btn-primary">See More</button ></Link>
+
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
