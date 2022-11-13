@@ -18,7 +18,7 @@ function App() {
       children: [
 
         {
-          path: '/', element: <Home></Home>
+          path: '/Home', element: <Home></Home>
         },
         {
           path: '/Services',
@@ -28,10 +28,8 @@ function App() {
           element: <Services></Services>
         },
         {
-          path: '/Home',
-          loader: async () => {
-            return fetch('https://b6a11-service-review-server-side-masniloy.vercel.app/Services')
-          },
+          path: '/',
+
           element: <Home></Home>
         },
         {
@@ -49,7 +47,7 @@ function App() {
             return fetch(`https://b6a11-service-review-server-side-masniloy.vercel.app/Services/${params.id}`)
           },
           element: <ServiceDetail></ServiceDetail>
-        }
+        },
 
 
       ]
