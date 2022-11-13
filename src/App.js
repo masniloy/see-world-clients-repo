@@ -16,12 +16,9 @@ function App() {
       path: '/',
       element: <Main></Main>,
       children: [
+
         {
-          path: '/',
-          element: <Home></Home>
-        },
-        {
-          path: '/Home', element: <Home></Home>
+          path: '/', element: <Home></Home>
         },
         {
           path: '/Services',
@@ -29,6 +26,13 @@ function App() {
             return fetch('https://b6a11-service-review-server-side-masniloy.vercel.app/Services')
           },
           element: <Services></Services>
+        },
+        {
+          path: '/Home',
+          loader: async () => {
+            return fetch('https://b6a11-service-review-server-side-masniloy.vercel.app/Services')
+          },
+          element: <Home></Home>
         },
         {
           path: '/Blog', element: <Blog></Blog>
@@ -40,9 +44,9 @@ function App() {
           path: '/Signup', element: <Signup></Signup>
         },
         {
-          path: '/ServiceDetail',
+          path: '/Services/:id',
           loader: async ({ params }) => {
-            return fetch(`https://b6a11-service-review-server-side-masniloy.vercel.app/Services/${params.Serial}`)
+            return fetch(`https://b6a11-service-review-server-side-masniloy.vercel.app/Services/${params.id}`)
           },
           element: <ServiceDetail></ServiceDetail>
         }

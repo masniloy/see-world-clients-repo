@@ -6,8 +6,13 @@ const Header = () => {
     return (
         <div className="navbar bg-base-100">
             <div className="flex-1">
-                <img href='/Home' className='h-16' src={logo1} alt="logo"></img>
-                <h1 className="text-2xl font-semibold">See-World</h1>
+                <Link to='/Home' className="flex ">
+                    <img href='/Home' className='h-16' src={logo1} alt="logo"></img>
+
+                </Link>
+                <Link to='/Home' className="flex ">
+                    <h1 className="text-2xl font-semibold">See-World</h1>
+                </Link>
             </div>
             <div className="flex-none">
                 <ul className="menu menu-horizontal p-0">
