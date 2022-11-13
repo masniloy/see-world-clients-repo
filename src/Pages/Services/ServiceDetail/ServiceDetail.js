@@ -15,7 +15,7 @@ const ServiceDetail = () => {
                         <p className="py-6">{description}</p>
                         <p><b>PRICE: {price}</b></p>
                         <p><b>{rating}<input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" /></b></p>
-                        <button className="btn btn-primary">Get Started</button>
+                        <br /><br />
                     </div>
                 </div>
             </div>

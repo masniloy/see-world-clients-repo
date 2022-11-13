@@ -1,45 +1,32 @@
 import React from 'react';
-// import { useState } from 'react';
-// import { useContext } from 'react';
+import { useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../../firebase/AuthPro/AuthPro';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 
 
 import(AuthContext)
 const Signup = () => {
-    // const [error, setError] = useState('');
-    // const { creatUser, userProfile } = useContext(AuthContext)
-    // const handlesignup = event => {
-    //     event.preventDefault();
-    //     const form = event.target;
-    //     const name = form.name.value;
-    //     const email = form.email.value;
-    //     const password = form.password.value;
-    //     console.log(name);
 
-    //     creatUser(email, password)
-    //         .then(result => {
-    //             const user = result.user;
-    //             setError('');
-    //             console.log(user);
-    //             forUserProfile(name)
+    const { user, usersLogin, logOut } = useContext(AuthContext);
+    const hlogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+    const googleProvider = new GoogleAuthProvider();
 
-    //         })
-    //         .catch(error => {
-    //             console.error(error)
-    //             setError(error.message)
-    //         })
-    // }
-    // const forUserProfile = (name) => {
-    //     const profile = {
-    //         displayName: name
-    //     }
-    //     userProfile(profile)
-    //         .then(() => { })
-    //         .catch(error => console.error(error));
-    // }
-    // onSubmit={handlesignup}
+    const forGoogle = () => {
+        usersLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error))
+    }
+
     return (
         <div>
             <div className="mx-auto card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -60,17 +47,19 @@ const Signup = () => {
                         <label className="label" name='password'>
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="password" placeholder="password" className="input input-bordered" required />
+                        <input type="password" placeholder="password" className="input input-bordered" required /><br />
+                        <input type="file" className="file-input file-input-bordered file-input-sm w-full max-w-xs" />
                     </div>
                     <div className="form-control mt-6">
                         <input className="btn btn-primary" type="submit" value="Sign Up" />
                     </div>
                     <p>Already have an Account <Link className='text-sky-500' to='/Signin' >Sign Up</Link></p>
-                    <input className="btn btn-primary" type="submit" value="Sign Up With Google" />
+                    <input className="btn btn-primary" onClick={forGoogle} type="submit" value="Sign Up With Google" />
+
                 </form>
             </div>
             <br /><br /><br />
-        </div>
+        </div >
     );
 };
 
